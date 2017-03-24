@@ -63,7 +63,8 @@ void processSpecialKeys(int key, int xx, int yy)
 	switch (key) 
 	{
 		case GLUT_KEY_UP :
-				inputKey.push_back('U');
+			if(gameover==0)	
+			inputKey.push_back('U');
 			break;
 	}
 }
