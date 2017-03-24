@@ -6,7 +6,7 @@ SOIL image loader library : `sudo apt-get install libsoil-dev`
 
 Freeglut : `sudo apt-get install freeglut3-dev`
 
-If required packages are satisfied, then just enter `make` to compile the code & enter ./floppybird to run.
+If required packages are satisfied, then just type `make` & press Enter to compile & enter ./floppybird to run.
 
 Changelog:
 1. Added Parallax tree effect.
