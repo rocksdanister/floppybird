@@ -448,7 +448,7 @@ void draw()
 	if(gameover==0)	
 	obstacleBrick[j].objdisp-=4;
 
-	if(obstacleBrick[j].objdisp<-(resX+100))
+	if(obstacleBrick[j].objdisp<-(resX+60))
 	{
 	score++;hit1=0;hit2=0;insidebrick=0;
 	obstacleBrick.erase(obstacleBrick.begin()+j);
