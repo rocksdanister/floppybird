@@ -21,6 +21,6 @@ Known Issue:
 2. Collision detecition and gravity algorithm tweaking required
 3. Initial game rendering delay/stutter.
 
-![Alt text](/WorkOut/temp_files/floppy.jpg?raw=true "floppy")
+![Alt text](/res/screenshot.jpg?raw=true "floppy")
 
 Note: Its alpha build & I am only learning as I go , go easy on me ^_^
