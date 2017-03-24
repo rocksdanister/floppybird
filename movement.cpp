@@ -12,7 +12,7 @@ void gameoverAnimation()
 {
 
 	inputKey.push_back('U');
-	v=1.0;
+	v=1.1;
 	
 }
 
@@ -43,7 +43,7 @@ if(inputKey.size()==0)
 if(gameover==0)
 {	
 tmp2=resY/2;
-v=0.61+(abs(movementY)/tmp2)/6;
+v=0.65+(abs(movementY)/tmp2)/5;
 }
 else
 {
