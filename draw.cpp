@@ -480,6 +480,6 @@ void draw()
 	}
 
 	hitDetection();
-glFinish();
+//glFinish();
 glutSwapBuffers();
 }
