@@ -44,7 +44,7 @@ int main(int argc, char** argv)
    //glutInitWindowSize(1280, 720);
    //glutInitWindowPosition(100, 100);
    //glutCreateWindow("Floppy Bird");
-   glutGameModeString("1280x720");
+   glutGameModeString("1360x768");
    if (glutGameModeGet(GLUT_GAME_MODE_POSSIBLE))
     glutEnterGameMode();
    else {
