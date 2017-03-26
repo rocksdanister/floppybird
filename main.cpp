@@ -33,7 +33,7 @@ int main(int argc, char** argv)
    //..frame-update setup
    queuedMilliseconds=0;
    prev0=0;
-   fps=60.05;
+   fps=60;
    responseTime=(1/fps)*1000;
 
 //... Rendering resoultion
@@ -41,9 +41,16 @@ int main(int argc, char** argv)
 
    glutInit(&argc, argv);
    glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
-  // glutInitWindowSize(1280, 720);
-   glutInitWindowPosition(100, 100);
-   glutCreateWindow("Floppy Bird");
+   //glutInitWindowSize(1280, 720);
+   //glutInitWindowPosition(100, 100);
+   //glutCreateWindow("Floppy Bird");
+   glutGameModeString("1280x720");
+   if (glutGameModeGet(GLUT_GAME_MODE_POSSIBLE))
+    glutEnterGameMode();
+   else {
+    printf("The select mode is not available\n");
+    exit(1);
+    }
    glutIgnoreKeyRepeat(1);
    glutFullScreen();
    glutDisplayFunc(draw); 
