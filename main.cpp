@@ -48,11 +48,14 @@ int main(int argc, char** argv)
    if (glutGameModeGet(GLUT_GAME_MODE_POSSIBLE))
     glutEnterGameMode();
    else {
-    printf("The selected resolution not available, Enter xrandr in terminal & change parameter in glutGameModeString to available resolution\n");
-    exit(1);
+    printf("ERROR: The selected resolution not available, Enter xrandr in terminal & change parameter in glutGameModeString to available resolution\n");
+    //... running window mode instead
+    glutInitWindowSize(1280, 720);
+    glutInitWindowPosition(100, 100);
+    glutCreateWindow("Floppy Bird");
+    glutFullScreen();  
     }
    glutIgnoreKeyRepeat(1);
-   glutFullScreen();
    glutDisplayFunc(draw); 
    glutIdleFunc(mixedStepLoop); 
    glutReshapeFunc(reshape);
