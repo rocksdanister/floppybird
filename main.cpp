@@ -48,7 +48,7 @@ int main(int argc, char** argv)
    if (glutGameModeGet(GLUT_GAME_MODE_POSSIBLE))
     glutEnterGameMode();
    else {
-    printf("The select resolution mode is not available, change parameter in glutGameModeString\n");
+    printf("The selected resolution not available, Enter xrandr in terminal & change parameter in glutGameModeString to available resolution\n");
     exit(1);
     }
    glutIgnoreKeyRepeat(1);
