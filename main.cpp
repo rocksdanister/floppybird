@@ -44,6 +44,7 @@ int main(int argc, char** argv)
   // glutInitWindowSize(1280, 720);
    glutInitWindowPosition(100, 100);
    glutCreateWindow("Floppy Bird");
+   glutIgnoreKeyRepeat(1);
    glutFullScreen();
    glutDisplayFunc(draw); 
    glutIdleFunc(mixedStepLoop); 
