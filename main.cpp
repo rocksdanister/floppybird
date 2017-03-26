@@ -48,7 +48,7 @@ int main(int argc, char** argv)
    if (glutGameModeGet(GLUT_GAME_MODE_POSSIBLE))
     glutEnterGameMode();
    else {
-    printf("ERROR: The selected resolution not available, Enter xrandr in terminal & change parameter in glutGameModeString to available resolution\n");
+    printf("WARNING: The selected resolution not available, Enter xrandr in terminal & change parameter in glutGameModeString to available resolution to fix vsync\n");
     //... running window mode instead
     glutInitWindowSize(1280, 720);
     glutInitWindowPosition(100, 100);
