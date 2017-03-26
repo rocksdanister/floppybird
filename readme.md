@@ -19,7 +19,7 @@ Changelog:
 
 Known Issue:
 
-1. stuttering/frameskip issue, needs to properly implement vsync using glew. Adjust fps and run with vlbank_mode=0 option as a temp fix.
+1. game mode used to implement vsync currently, cant find the required extension in my intel hd driver for linux using glewInit , will look into it
 2. Collision detecition and gravity algorithm tweaking required
 3. Initial game rendering delay/stutter.
 
