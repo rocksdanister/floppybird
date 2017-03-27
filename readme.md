@@ -8,10 +8,6 @@ Freeglut : `sudo apt-get install freeglut3-dev`
 
 If required packages are satisfied, then just type `make` & press Enter to compile & enter ./floppybird to run.
 
-Note:
-
-If the game does not run, comment out the game mode line & run it as window mode or give different resolution to gamemode string.
-
 ![Alt text](/res/screenshot.jpg?raw=true "floppy")
 
 Changelog:
