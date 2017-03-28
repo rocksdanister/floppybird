@@ -1,4 +1,4 @@
-Floppy Bird 2D Scroller Game  (alpha build v0.5)
+Floppy Bird 2D Scroller Game  (alpha build v0.6)
 
 Requirement:
 
@@ -21,6 +21,5 @@ Known Issue:
 
 1. game mode used to implement vsync currently, cant find the required extension in my intel hd driver for linux using glewInit , will look into it
 2. Collision detecition and gravity algorithm tweaking required
-3. Initial game rendering delay/stutter.
 
 Note: Its alpha build & I am only learning as I go , go easy on me ^_^
