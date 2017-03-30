@@ -43,7 +43,7 @@ if(inputKey.size()==0)
 if(gameover==0)
 {	
 tmp2=resY/2;
-v=0.65;//(abs(movementY)/tmp2)/8;
+v=0.65+(abs(movementY)/tmp2)/5;
 }
 else
 {
