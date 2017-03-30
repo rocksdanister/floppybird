@@ -15,6 +15,7 @@ Changelog:
 2. tweaking of movement and collision.
 3. Added gameover animation.
 4. tweaked brick positioning and texture.
+5. Changed input key to spacebar.
 
 Known Issue:
 
