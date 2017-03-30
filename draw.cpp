@@ -362,7 +362,7 @@ void draw()
 	//...SCORE & TEXT
 	glColor3f(0.5,0.5,0.5);
 	
-	string str2=">FLOPPY BIRD >Movement: Up key >Exit: ESC ";
+	string str2=">FLOPPY BIRD >Movement: SPACEBAR >Exit: ESC ";
 	if(score==0)
 	{
 	const char * t2 = str2.c_str();
