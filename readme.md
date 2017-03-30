@@ -1,4 +1,4 @@
-Floppy Bird 2D Scroller Game  (alpha build v0.6)
+Floppy Bird 2D Scroller Game  (alpha build v0.8)
 
 Requirement:
 
@@ -14,12 +14,11 @@ Changelog:
 1. Added Parallax tree effect.
 2. tweaking of movement and collision.
 3. Added gameover animation.
-4. Variable falling velocity added.
-5. tweaked brick positioning and texture.
+4. tweaked brick positioning and texture.
 
 Known Issue:
 
-1. game mode used to implement vsync currently, cant find the required extension in my intel hd driver for linux using glewInit , will look into it
-2. Collision detecition and gravity algorithm tweaking required
+1. game mode used to implement vsync currently, cant find the required extension in my intel hd driver for linux using glewInit.
+2. gravity algorithm tweaking required
 
 Note: Its alpha build & I am only learning as I go , go easy on me ^_^
