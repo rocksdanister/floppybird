@@ -16,7 +16,7 @@ int objdisp;
 
 vector<bricks> obstacleBrick;
 unsigned char* image;
-static GLuint texBird[8],texBac[2],texObj[3];
+static GLuint texBird[4],texBac[2],texObj[3];
 int width, height,score;
 float skyX,treeX,treeX2,groundX;
 GLuint dlist[6];
@@ -32,7 +32,7 @@ void init()
 	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	
 //............BIRD...............
-	glGenTextures(8,texBird);
+	glGenTextures(4,texBird);
 
 	glBindTexture(GL_TEXTURE_2D, texBird[0]);  //texture 1 active 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
@@ -73,45 +73,6 @@ void init()
 	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image );
 	SOIL_free_image_data( image );
 
-/*
-	glBindTexture(GL_TEXTURE_2D, texBird[4]);   
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	image = SOIL_load_image( "res/bird/frame-5.png", &width, &height, 0, SOIL_LOAD_RGBA );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image );
-	SOIL_free_image_data( image );
-
-
-	glBindTexture(GL_TEXTURE_2D, texBird[5]);  
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	image = SOIL_load_image( "res/bird/frame-6.png", &width, &height, 0, SOIL_LOAD_RGBA );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image );
-	SOIL_free_image_data( image );
-
-	glBindTexture(GL_TEXTURE_2D, texBird[6]);  
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	image = SOIL_load_image( "res/bird/frame-7.png", &width, &height, 0, SOIL_LOAD_RGBA );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image );
-	SOIL_free_image_data( image );
-
-	glBindTexture(GL_TEXTURE_2D, texBird[7]);  
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT); 
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	image = SOIL_load_image( "res/bird/frame-8.png", &width, &height, 0, SOIL_LOAD_RGBA );
-	glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image );
-	SOIL_free_image_data( image );
-
-*/
 //.......BACKGROUND.............
 	glGenTextures(2,texBac);
 	glBindTexture(GL_TEXTURE_2D, texBac[0]);  
@@ -278,16 +239,16 @@ glNewList(dlist[4], GL_COMPILE);
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(resX,-resY/2,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX+50,-resY/2,0);
-		glTexCoord2f(1.0, -1.0); glVertex3f(resX+50,resY/2-30,0);                        
-		glTexCoord2f(0.0, -1.0); glVertex3f(resX,resY/2-30,0);
+		glTexCoord2f(1.0, -1.0); glVertex3f(resX+50,resY/2-38,0);                        
+		glTexCoord2f(0.0, -1.0); glVertex3f(resX,resY/2-38,0);
 	glEnd();
 
 //.... TOP BRICK
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(resX,resY+resY/2,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX+50,resY+resY/2,0);
-		glTexCoord2f(1.0, -1.0); glVertex3f(resX+50,resY/2+30,0);                        
-		glTexCoord2f(0.0, -1.0); glVertex3f(resX,resY/2+30,0);
+		glTexCoord2f(1.0, -1.0); glVertex3f(resX+50,resY/2+38,0);                        
+		glTexCoord2f(0.0, -1.0); glVertex3f(resX,resY/2+38,0);
 	glEnd();
 
 glEndList();
@@ -327,7 +288,7 @@ void hitDetection()
 		{
 		 	insidebrick=1;
 				//Bottom Brick Y original=(movementY+resY/2) 				Top Brick Y	 original=(movementY+resY/2+25)				                           
-			if( (movementY+(resY/2)+10) >= ( ((resY/2)-30)+ obstacleBrick[i].y) && (movementY+(resY/2)+30-5) <= ( ((resY/2)+30) +obstacleBrick[i].y) )
+			if( (movementY+(resY/2)+10) >= ( ((resY/2)-38)+ obstacleBrick[i].y) && (movementY+(resY/2)+30-5) <= ( ((resY/2)+38) +obstacleBrick[i].y) )
 			{
 				hit1++;				
 	 		}
