@@ -26,10 +26,10 @@ for(ii=0;ii<inputKey.size();ii++)
 		if(inputKey[ii]=='U')
 			{
 				if((movementY+(resY/2)+50)<resY)
-				movementY+=3.5;
+				movementY+=4;
 				cnt++;
 			}	
-		if(cnt>=7)
+		if(cnt>=10)
 			{	
 				cnt=0;	
 				inputKey.erase(inputKey.begin()+ii);
