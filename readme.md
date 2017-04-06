@@ -1,4 +1,4 @@
-Floppy Bird 2D Scroller Game  (alpha build v0.8)
+Floppy Bird 2D Scroller Game  (stable v1.0)
 
 Requirement:
 
