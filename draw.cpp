@@ -19,7 +19,6 @@ unsigned char* image;
 static GLuint texBird[4],texBac[2],texObj[3];
 int width, height,score;
 float skyX,treeX,treeX2,groundX;
-GLuint dlist[6];
 int birdPhys,i,j,tmp,highscore,insidebrick,gameover,prevy;
 double syncBird;
 
@@ -125,15 +124,11 @@ void init()
 glEnable(GL_TEXTURE_2D);
 }
 
-
+ GLuint base;
 void initialiseList()
 {
-dlist[0]=glGenLists(1);
-dlist[1]=glGenLists(1);
-dlist[2]=glGenLists(1);
-dlist[3]=glGenLists(1);
-dlist[4]=glGenLists(1);
-dlist[5]=glGenLists(1);
+base=glGenLists(6);
+glListBase(base);
 }
 
 void update(double temp)
@@ -174,7 +169,7 @@ void updateSynchronised()
 
 void staticBird()
 {
-glNewList(dlist[0], GL_COMPILE);
+glNewList(base+0, GL_COMPILE);
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(0,resY/2,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(30,resY/2,0);
@@ -186,7 +181,7 @@ glEndList();
 
 void staticGround()
 {
-glNewList(dlist[1], GL_COMPILE);
+glNewList(base+1, GL_COMPILE);
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(0,0,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX*2,0,0);
@@ -198,7 +193,7 @@ glEndList();
 
 void staticSky()
 {
-glNewList(dlist[2], GL_COMPILE);
+glNewList(base+2, GL_COMPILE);
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(0,0,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX*2,0,0);
@@ -210,7 +205,7 @@ glEndList();
 
 void staticTrees()
 {
-glNewList(dlist[3], GL_COMPILE);
+glNewList(base+3, GL_COMPILE);
 glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(0,0,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX*2,0,0);
@@ -222,7 +217,7 @@ glEndList();
 
 void staticTrees_2()
 {
-glNewList(dlist[5], GL_COMPILE);
+glNewList(base+5, GL_COMPILE);
 glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(0,0,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX*2,0,0);
@@ -235,7 +230,7 @@ glEndList();
 void staticBrick()
 {
 //... BOTTOM BRICK	
-glNewList(dlist[4], GL_COMPILE);
+glNewList(base+4, GL_COMPILE);
 	glBegin(GL_QUADS);
 		glTexCoord2f(0.0, 0.0); glVertex3f(resX,-resY/2,0);
 		glTexCoord2f(1.0, 0.0); glVertex3f(resX+50,-resY/2,0);
@@ -356,7 +351,7 @@ void draw()
 	glPushMatrix();
 	glTranslatef(skyX,0,0);
 	glBindTexture(GL_TEXTURE_2D, texBac[0]);
-	glCallList(dlist[2]);
+	glCallList(base+2);
 	glPopMatrix();
 
 	//...SCORE & TEXT
@@ -379,13 +374,13 @@ void draw()
 	glPushMatrix();
 	glTranslatef(treeX2,0,0);
 	glBindTexture(GL_TEXTURE_2D, texObj[2]);
-	glCallList(dlist[5]);
+	glCallList(base+5);
 	glPopMatrix();
 
 	glPushMatrix();
 	glTranslatef(treeX,0,0);
 	glBindTexture(GL_TEXTURE_2D, texObj[0]);
-	glCallList(dlist[3]);
+	glCallList(base+3);
 	glPopMatrix();
 if(startFlag==1)
 {
@@ -430,7 +425,7 @@ if(startFlag==1)
 	glPushMatrix();
 	glTranslatef(obstacleBrick[j].objdisp,obstacleBrick[j].y,0);
 	glBindTexture(GL_TEXTURE_2D, texObj[1]);
-	glCallList(dlist[4]);
+	glCallList(base+4);
 	glPopMatrix();
 	}
 }
@@ -438,14 +433,14 @@ if(startFlag==1)
 	glPushMatrix();
 	glTranslatef(groundX,0,0);
 	glBindTexture(GL_TEXTURE_2D, texBac[1]);
-	glCallList(dlist[1]);
+	glCallList(base+1);
 	glPopMatrix();
 
 	//...BIRD
 	glPushMatrix();
 	glTranslatef(movementX,movementY,0);
 	glBindTexture(GL_TEXTURE_2D, texBird[birdPhys]);
-	glCallList(dlist[0]);
+	glCallList(base+0);
 	glPopMatrix();		
 	
 	}
