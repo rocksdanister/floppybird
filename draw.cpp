@@ -426,14 +426,13 @@ if(startFlag==1)
 	score++;hit1=0;hit2=0;insidebrick=0;
 	obstacleBrick.erase(obstacleBrick.begin()+j);
 	}	
-	else
-	{
+	
+	
 	glPushMatrix();
 	glTranslatef(obstacleBrick[j].objdisp,obstacleBrick[j].y,0);
 	glBindTexture(GL_TEXTURE_2D, texObj[1]);
 	glCallList(dlist[4]);
 	glPopMatrix();
-	}
 	}
 }
 	//..GROUND	
