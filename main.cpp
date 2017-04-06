@@ -6,7 +6,7 @@
 using namespace std;
 
 double queuedMilliseconds,prev0,fps,responseTime;
-int resX,resY,movementX;
+int resX,resY,movementX,startFlag;
 double movementY;
 
 //... Reshaping settings & rendering parameters.
@@ -53,6 +53,9 @@ for(ii=0;ii<inputKey.size();ii++)
 			}		
 		
 	}
+if(startFlag==1)
+{ 
+
 //...GRAVITY
 if(inputKey.size()==0)
 {
@@ -72,12 +75,16 @@ else
 	}
 }
 movementY-= v*v/2*g;
+
+}
+
 }
 
 }
 
 void keyboard (unsigned char key, int x, int y)
 {
+  startFlag=1;
    switch (key) {
       case 27:
          exit(0);

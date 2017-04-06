@@ -269,12 +269,12 @@ treeX2=0;
 obstacleBrick.clear();
 score=0;
 insidebrick=0;
+startFlag=0;
 }
 else
 {
 gameoverAnimation();
 }
-
 }
 
 void hitDetection()
@@ -363,7 +363,7 @@ void draw()
 	glColor3f(0.5,0.5,0.5);
 	
 	string str2=">FLOPPY BIRD >Movement: SPACEBAR >Exit: ESC ";
-	if(score==0)
+	if(startFlag==0)
 	{
 	const char * t2 = str2.c_str();
 	renderStrokeFont(100,400,1,t2);
@@ -387,7 +387,8 @@ void draw()
 	glBindTexture(GL_TEXTURE_2D, texObj[0]);
 	glCallList(dlist[3]);
 	glPopMatrix();
-
+if(startFlag==1)
+{
 	//..BRICK GENERATION
 	if(gameover==0)
 	{	
@@ -434,7 +435,7 @@ void draw()
 	glPopMatrix();
 	}
 	}
-
+}
 	//..GROUND	
 	glPushMatrix();
 	glTranslatef(groundX,0,0);
