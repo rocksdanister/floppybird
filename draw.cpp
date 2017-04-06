@@ -423,11 +423,9 @@ if(startFlag==1)
 	score++;hit1=0;hit2=0;insidebrick=0;
 	obstacleBrick.erase(obstacleBrick.begin()+j);
 	}	
-	else
-	{
-		if(gameover==0)	
-		obstacleBrick[j].objdisp-=4;
-	}
+
+	if(gameover==0)	
+	obstacleBrick[j].objdisp-=4;
 	
 	glPushMatrix();
 	glTranslatef(obstacleBrick[j].objdisp,obstacleBrick[j].y,0);
