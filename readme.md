@@ -16,11 +16,10 @@ Changelog:
 3. Added gameover animation.
 4. tweaked brick positioning and texture.
 5. Changed input key to spacebar.
-6. Game might be a bit too easy right now.
+6. Awaits user input to start the game.
 
 Known Issue:
 
 1. game mode used to implement vsync currently, cant find the required extension in my intel hd driver for linux using glewInit.
-2. gravity algorithm tweaking required
+2. Screen tearing on nvidia gpu.
 
-Note: Its alpha build & I am only learning as I go , go easy on me ^_^
