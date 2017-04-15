@@ -1,12 +1,12 @@
 Floppy Bird 2D Scroller Game  (stable v1.0)
 
-Requirement:
+Requirements:
 
 SOIL image loader library : `sudo apt-get install libsoil-dev`
 
 Freeglut : `sudo apt-get install freeglut3-dev`
 
-If required packages are satisfied, then just type `make` & press Enter to compile & enter ./floppybird to run.
+If required packages are satisfied, then just type `make`, press Enter to compile & enter `./floppybird` to run.
 
 ![Alt text](/res/screenshot.jpg?raw=true "floppy")
 
