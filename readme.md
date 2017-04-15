@@ -6,6 +6,8 @@ SOIL image loader library : `sudo apt-get install libsoil-dev`
 
 Freeglut : `sudo apt-get install freeglut3-dev`
 
+g++ compiler : `sudo apt-get install g++`
+
 If required packages are satisfied, then just type `make`, press Enter to compile & enter `./floppybird` to run.
 
 ![Alt text](/res/screenshot.jpg?raw=true "floppy")
