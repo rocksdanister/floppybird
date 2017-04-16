@@ -1,3 +1,4 @@
+// Function declarations & global variables.
 extern double queuedMilliseconds,prev0,fps,responseTime;
 extern int resX,resY,movementX,insidebrick,gameover,startFlag;
 extern double movementY;
