@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <SOIL/SOIL.h>
+#include <math.h>
 
 using namespace std;
 
