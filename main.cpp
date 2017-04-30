@@ -37,7 +37,7 @@ void gameoverAnimation()
 
 void movePhysics()
 {
-int ii;
+unsigned int ii;
 g=10;
 for(ii=0;ii<inputKey.size();ii++)	
 	{

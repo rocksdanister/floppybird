@@ -19,8 +19,9 @@ unsigned char* image;
 static GLuint texBird[4],texBac[2],texObj[3];
 int width, height,score;
 float skyX,treeX,treeX2,groundX;
-int birdPhys,i,j,tmp,highscore,insidebrick,gameover,prevy;
+int birdPhys,tmp,highscore,insidebrick,gameover,prevy;
 double syncBird;
+unsigned int i,j;
 
 void init()
 {
