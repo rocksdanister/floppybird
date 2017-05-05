@@ -22,3 +22,4 @@ build:
 
 clean:
 	rm -rf build/ *~
+	rm floppybird
