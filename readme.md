@@ -1,4 +1,4 @@
-Floppy Bird 2D Scroller Game  (stable v1.0)
+Floppy Bird 2D Scroller Game  (stable v1.0.1)
 
 Requirements:
 
@@ -19,6 +19,7 @@ Changelog:
 4. tweaked brick positioning and texture.
 5. Changed input key to spacebar.
 6. Awaits user input to start the game.
+7. Added God Mode (cheat code: ?)
 
 Known Issue:
 
