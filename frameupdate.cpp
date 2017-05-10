@@ -7,6 +7,7 @@ void mixedStepLoop()
     double timeElapsedMs =(now-prev0);
     queuedMilliseconds += timeElapsedMs;
     update(timeElapsedMs);
+    //adjustBrick();
     while(queuedMilliseconds >= responseTime) 
     {
         updateSynchronised();

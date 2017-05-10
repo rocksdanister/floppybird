@@ -274,6 +274,27 @@ gameoverAnimation();
 }
 }
 
+void adjustBrick()  //.... GOD MODE
+{
+int delta;
+	for(i=0;i<obstacleBrick.size()&&i==0;i++)
+	{
+		delta=(movementY+(resY/2)+10) - ( ((resY/2))+ obstacleBrick[i].y);
+		if(delta<0)
+			delta*=-1;
+		if( (movementY+(resY/2)+10) <= ( ((resY/2))+ obstacleBrick[i].y) )
+		{
+			obstacleBrick[i].y+=-delta;
+	 	}
+		else 
+		{
+			obstacleBrick[i].y+=delta;
+		}
+
+	}
+	
+}
+
 void hitDetection()
 {
 	if(gameover==0)
@@ -446,7 +467,8 @@ if(startFlag==1)
 	glPopMatrix();		
 	
 	}
-
+	if(god==1)
+	adjustBrick();
 	hitDetection();
 //glFinish();
 glutSwapBuffers();

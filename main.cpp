@@ -4,11 +4,12 @@
 #include <floppy.h>
 #include <vector>
 #include <math.h>
+#include <string.h>
 
 using namespace std;
 
 double queuedMilliseconds,prev0,fps,responseTime;
-int resX,resY,movementX,startFlag;
+int resX,resY,movementX,startFlag,god;
 double movementY;
 
 //... Reshaping settings & rendering parameters.
@@ -84,9 +85,15 @@ movementY-= v*v/2*g;
 
 }
 
+int godcnt,abcindex;
+char abc[13]; 
 void keyboard (unsigned char key, int x, int y)
 {
-  startFlag=1;
+  if(key==32)
+  	startFlag=1;
+  else
+ 	abc[abcindex++]=key;
+
    switch (key) {
       case 27:
          exit(0);
@@ -94,9 +101,16 @@ void keyboard (unsigned char key, int x, int y)
  	  case 32:
  	  	if(gameover==0)	
 		inputKey.push_back('U');
-		break;
-
+		break;			
    }
+   if(abcindex==13)
+   { 															
+   		if(strcmp(abc,"rocksdanister")==0)
+   			god=1;
+   		else
+   			abcindex=0;		
+   }
+
 }
 
 //... keyboard input end.
