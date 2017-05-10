@@ -322,9 +322,12 @@ void hitDetection()
 			resetFunc();
 		}
 		if(movementY<-(resY/2-30))
-		{
-			gameover=1;	
-			resetFunc();
+		{	
+			if(god==0)
+			{	
+				gameover=1;	
+				resetFunc();
+			}	
 		}
 
 	}
