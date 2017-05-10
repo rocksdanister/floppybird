@@ -77,7 +77,13 @@ else
 		resetFunc();
 	}
 }
-movementY-= v*v/2*g;
+if( (movementY<-(resY/2-30)) )
+{
+	if(god==0)
+		movementY-= v*v/2*g;
+}
+else
+	movementY-= v*v/2*g;	
 
 }
 
