@@ -1,7 +1,5 @@
 # Flappy bird like game using opengl and c++
 [![GitHub release](https://img.shields.io/github/release/phw/peek.svg)](https://github.com/rocksdanister/floppybird/releases)
-[![Packaging status](https://repology.org/badge/tiny-repos/floppybird.svg)](https://repology.org/metapackage/floppybird/packages)
-[![Build Status](https://travis-ci.org/rocksdanister/floppybird.svg?branch=master)](https://travis-ci.org/rocksdanister/floppybird)
 
 Floppy Bird 2D Scroller Game  (stable v1.0.1)
 
