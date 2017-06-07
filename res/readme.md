@@ -1,2 +1,1 @@
-Credits to assets goes to:
-http://bevouliin.com/
+Opensource game assets taken from opengameart.org made by bevouliin.
